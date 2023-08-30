@@ -9,7 +9,7 @@ type Task struct {
 	DueDate     time.Time
 }
 
-var tasks map[string]*Task
+var tasks = make(map[string]*Task)
 
 func GetTasks() map[string]*Task {
 	return tasks
