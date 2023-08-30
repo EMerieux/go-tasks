@@ -11,15 +11,15 @@ type Task struct {
 
 var tasks map[string]*Task
 
-func getTasks() map[string]*Task {
+func GetTasks() map[string]*Task {
 	return tasks
 }
 
-func getTask(uuid string) *Task {
+func GetTask(uuid string) *Task {
 	return tasks[uuid]
 }
 
-func createTask(uuid string, title string, description string, dueDate time.Time) *Task {
+func CreateTask(uuid string, title string, description string, dueDate time.Time) *Task {
 	task := Task{
 		Uuid:        uuid,
 		Title:       title,
@@ -27,5 +27,5 @@ func createTask(uuid string, title string, description string, dueDate time.Time
 		DueDate:     dueDate,
 	}
 	tasks[task.Uuid] = &task
-	return getTask(task.Uuid)
+	return tasks[task.Uuid]
 }
